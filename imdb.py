@@ -1,7 +1,12 @@
 '''
-IMDB movie reviews sentiment prediction task
+Task: IMDB movie reviews sentiment prediction
+Model: Bi-directional LSTM
 
-Bidirectional LSTM encodes movie reviews word by word
+Each sentence in the training set is represented as a sequence of word indices
+Which are collapsed down to a 128-dim embedding space via an embedding layer
+Then are then fed one by one into a Bidirectional LSTM that encodes the entire sentence.
+The outputs of the Bidirectional LSTM are then fed into a single unit layer that is passed
+through a sigmoidal activation function that represents the probability of a given sentence being positive sentiment
 '''
 
 #imports
